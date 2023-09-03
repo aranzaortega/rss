@@ -8,8 +8,8 @@ let articles = []
 
 const parse = async url => {
     const feed = await parser.parseURL(url)
-    feed.items.forEach(item => {
-        articles.push({ item })
+    feed.items.forEach((item, i) => {
+        articles.push({ item: {...item, id: i} })
     })
 }
 
