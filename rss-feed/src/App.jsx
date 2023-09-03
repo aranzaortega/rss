@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 
 function App() {
   const [articles, setArticles]  = useState([])
-  console.log(articles);
   const getArticles = async () => {
     try {
       const res = await axios.get("http://localhost:4000/")
@@ -11,6 +10,13 @@ function App() {
     } catch (error) {
       console.log(error)
     }
+  }
+  const getImageFromArticle = (article) => {
+    var imgRegex = /<img[^>]*>/g
+    var match = article.match(imgRegex)
+    var imgTag = "<p>No hay imagen del artículo</p>"
+    if (match) { imgTag = match[0] }
+    return imgTag
   }
 
   useEffect(() => {
@@ -24,10 +30,15 @@ function App() {
         RSS Feed
       </h1>
       <h2 className="text-xl font-bold">
-        From: Xataca
+        From: Xataka Android
       </h2>
     </div>
-    {articles.map((item, i) => <div key={i} className="m-8">{item.item.title}</div>)}
+    {articles.length > 0 && articles.map((item, i) =>
+      <div key={i} className="m-8">
+        <h3>{item.item.title}</h3>
+        <div dangerouslySetInnerHTML={{__html: getImageFromArticle(item.item.content)}}></div>
+      </div>
+    )}
     </>
   )
 }
