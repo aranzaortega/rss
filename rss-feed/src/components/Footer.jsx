@@ -1,6 +1,8 @@
 const Footer = () => {
   return (
-    <div className="text-center m-8">Aranza Ortega @2023</div>
+    <div className="text-center m-8 text-xl font-bold">
+      <a href="https://github.com/aranzaortega">Aranza Ortega @2023</a>
+    </div>
   )
 }
 

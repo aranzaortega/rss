@@ -9,7 +9,7 @@ const Header = () => {
         </h1>
       </Link>
       <h2 className="text-xl font-bold">
-        From: Xataka Android
+        Fuente: Xataka Android
       </h2>
     </div>
   )
