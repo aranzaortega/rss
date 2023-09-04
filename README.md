@@ -1,6 +1,9 @@
 # Lector RSS
 Consiste en una aplicación básica de un lector RSS.
 
+## DEMO
+![Demo RSS](rss.gif)
+
 ## Descripción
 A continuación te dejo un listado de las herramientas usadas junto con una breve justificación:
 
