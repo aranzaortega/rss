@@ -1,3 +1,4 @@
+// Función para obtener la primera etiqueta de imagen desde un string
 
 export const getImageFromArticle = (article) => {
     var imgRegex = /<img[^>]*>/g
